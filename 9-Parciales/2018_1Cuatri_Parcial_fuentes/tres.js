@@ -13,8 +13,8 @@ function mostrar()
 
 	descuento=precio*porcentaje/100;
 
-	precioFinal=precio-descuento
-	document.getElementById('')
+	precioFinal=precio-descuento;
+	document.getElementById('elPrecioFinal').value=precioFinal;
 
 
 }
