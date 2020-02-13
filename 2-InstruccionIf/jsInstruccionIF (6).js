@@ -21,7 +21,4 @@ function mostrar()
 			alert("es menor de edad");
 		}
 	}
-
-
-
 }//FIN DE LA FUNCIÓN
