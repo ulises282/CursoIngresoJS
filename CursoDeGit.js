@@ -1,7 +1,9 @@
-git clone https://github.com/ulises282/CursoIngresoJS.git
+git clone https://github.com/ulises282/CursoIngresoJS.git  //descargar archivo
 
-git add .
+a_ git add .
 
-git commit -m "mensaje"
+b_ git commit -m "mensaje"
 
-git status 
+c_ git push  //subir archivo
+
+git status
