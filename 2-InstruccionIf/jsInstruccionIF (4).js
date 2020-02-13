@@ -6,7 +6,7 @@ function mostrar()
 	edad=document.getElementById('edad').value;
 	edad=parseInt(edad);
 
-	if (edad>12&&edad<18)// == igual   != distinto
+	if (edad>12 && edad<18)// == igual   != distinto
 	{
 		alert("es adolecente");
 	}
