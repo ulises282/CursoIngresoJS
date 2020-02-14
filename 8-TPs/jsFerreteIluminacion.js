@@ -10,5 +10,99 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio () 
 {
- 	
+ 	var precioDeLampara;
+ 	var cantidadDeLamparas;
+ 	var subtotal;
+ 	var precioFinal;
+ 	var marca;
+ 	var descuento;
+ 	var ingresosBrutos;
+ 	var impuesto;
+
+ 	marca=document.getElementById("Marca").value;
+
+ 	precioDeLampara=35;
+
+ 	cantidadDeLamparas=document.getElementById('Cantidad').value;
+ 	cantidadDeLamparas=parseInt(cantidadDeLamparas);
+
+ 	subtotal=precioDeLampara*cantidadDeLamparas;
+
+ 	if (cantidadDeLamparas>5)
+ 	{
+ 		descuento=subtotal *50  /100;
+ 		precioFinal=subtotal-descuento;
+  		document.getElementById("precioDescuento").value=precioFinal;
+ 	}
+ 	else
+ 	{
+
+ 		if (cantidadDeLamparas==5)
+ 		{
+ 			if (marca=="ArgentinaLuz")
+ 			{
+ 			descuento=subtotal *40 /100;
+ 			precioFinal=subtotal-descuento;
+ 			document.getElementById("precioDescuento").value=precioFinal;
+ 			}
+	 		else
+	 		{
+	 			descuento=subtotal *30 /100;
+	 			precioFinal=subtotal-descuento;
+	 			document.getElementById("precioDescuento").value=precioFinal;
+	 		}
+	 	}
+	 	else
+	 	{
+	 		if (cantidadDeLamparas==4)
+	 		{
+	 			if (marca=="ArgentinaLuz"||marca=="FelipeLamparas")
+	 			{
+	 				descuento=subtotal *25 /100;
+ 					precioFinal=subtotal-descuento;
+ 					document.getElementById("precioDescuento").value=precioFinal;
+	 			}
+	 			else
+	 			{
+	 				descuento=subtotal *20 /100;
+ 					precioFinal=subtotal-descuento;
+ 					document.getElementById("precioDescuento").value=precioFinal;
+	 			}
+
+	 		}
+	 		else
+	 		{
+	 			if (cantidadDeLamparas==3)
+	 			{
+	 				if (marca=="ArgentinaLuz")
+	 				{
+	 					descuento=subtotal *15 /100;
+ 						precioFinal=subtotal-descuento;
+ 						document.getElementById("precioDescuento").value=precioFinal;
+	 				}
+	 				else
+	 				{
+	 					if (marca=="FelipeLamparas")
+	 					{
+	 						descuento=subtotal *10 /100;
+ 							precioFinal=subtotal-descuento;
+ 							document.getElementById("precioDescuento").value=precioFinal;
+	 					}
+	 					else
+	 					{
+	 						descuento=subtotal *5 /100;
+ 							precioFinal=subtotal-descuento;
+ 							document.getElementById("precioDescuento").value=precioFinal;
+	 					}
+	 				}
+	 			}
+	 		}
+	 	}
+ 	}
+ 	if (precioFinal>120)
+ 	{
+ 		impuesto=precioFinal*10/100;
+ 		ingresosBrutos=precioFinal+impuesto;
+ 		alert("IIBB Usted pago : "+ ingresosBrutos + ", siendo " + impuesto + " el impuesto que se pagó.");
+ 	}
 }
