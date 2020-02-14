@@ -6,7 +6,6 @@ C.	Si compra 4  lamparitas bajo consumo marca "ArgentinaLuz" o “FelipeLamparas
 D.	Si compra 3  lamparitas bajo consumo marca "ArgentinaLuz"  el descuento es del 15%, si es  “FelipeLamparas” se hace un descuento del 10 % y si es de otra marca un 5%.
 E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de ingresos brutos en informar del impuesto con el siguiente mensaje:
  ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó. 
-
  */
 function CalcularPrecio () 
 {
@@ -28,28 +27,23 @@ function CalcularPrecio ()
 
  	subtotal=precioDeLampara*cantidadDeLamparas;
 
+ 	descuento=0;
+
  	if (cantidadDeLamparas>5)
  	{
- 		descuento=subtotal *50  /100;
- 		precioFinal=subtotal-descuento;
-  		document.getElementById("precioDescuento").value=precioFinal;
+ 		descuento=50;
  	}
  	else
  	{
-
  		if (cantidadDeLamparas==5)
  		{
  			if (marca=="ArgentinaLuz")
  			{
- 			descuento=subtotal *40 /100;
- 			precioFinal=subtotal-descuento;
- 			document.getElementById("precioDescuento").value=precioFinal;
+ 				descuento=40;
  			}
 	 		else
 	 		{
-	 			descuento=subtotal *30 /100;
-	 			precioFinal=subtotal-descuento;
-	 			document.getElementById("precioDescuento").value=precioFinal;
+	 			descuento=30;
 	 		}
 	 	}
 	 	else
@@ -58,17 +52,12 @@ function CalcularPrecio ()
 	 		{
 	 			if (marca=="ArgentinaLuz"||marca=="FelipeLamparas")
 	 			{
-	 				descuento=subtotal *25 /100;
- 					precioFinal=subtotal-descuento;
- 					document.getElementById("precioDescuento").value=precioFinal;
+	 				descuento=25;
 	 			}
 	 			else
 	 			{
-	 				descuento=subtotal *20 /100;
- 					precioFinal=subtotal-descuento;
- 					document.getElementById("precioDescuento").value=precioFinal;
+	 				descuento=20;
 	 			}
-
 	 		}
 	 		else
 	 		{
@@ -76,33 +65,32 @@ function CalcularPrecio ()
 	 			{
 	 				if (marca=="ArgentinaLuz")
 	 				{
-	 					descuento=subtotal *15 /100;
- 						precioFinal=subtotal-descuento;
- 						document.getElementById("precioDescuento").value=precioFinal;
+	 					descuento=15;
 	 				}
 	 				else
 	 				{
 	 					if (marca=="FelipeLamparas")
 	 					{
-	 						descuento=subtotal *10 /100;
- 							precioFinal=subtotal-descuento;
- 							document.getElementById("precioDescuento").value=precioFinal;
+	 						descuento=10;
 	 					}
 	 					else
 	 					{
-	 						descuento=subtotal *5 /100;
- 							precioFinal=subtotal-descuento;
- 							document.getElementById("precioDescuento").value=precioFinal;
+	 						descuento=5;
 	 					}
 	 				}
 	 			}
 	 		}
 	 	}
  	}
+
+ 	precioFinal=subtotal-(subtotal*descuento/100);
+ 	document.getElementById("precioDescuento").value=precioFinal;
+ 
  	if (precioFinal>120)
  	{
  		impuesto=precioFinal*10/100;
  		ingresosBrutos=precioFinal+impuesto;
  		alert("IIBB Usted pago : "+ ingresosBrutos + ", siendo " + impuesto + " el impuesto que se pagó.");
+ 		document.getElementById("precioDescuento").value=ingresosBrutos;
  	}
 }
