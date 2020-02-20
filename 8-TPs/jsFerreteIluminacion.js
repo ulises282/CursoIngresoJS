@@ -29,7 +29,7 @@ function CalcularPrecio ()
 
  	descuento=0;
 
- 	if (cantidadDeLamparas>5)
+ 	/*if (cantidadDeLamparas>5)
  	{
  		descuento=50;
  	}
@@ -81,8 +81,8 @@ function CalcularPrecio ()
 	 			}
 	 		}
 	 	}
- 	}
-
+ 	}*/
+ 	
  	precioFinal=subtotal-(subtotal*descuento/100);
  	document.getElementById("precioDescuento").value=precioFinal;
  
