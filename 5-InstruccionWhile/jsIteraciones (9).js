@@ -22,6 +22,7 @@ function mostrar()
 			numero = prompt("error ingrese un numero valido: ");
 			numero=parseInt(numero);
 		}
+		
 		contador=contador+1;
 
 		if (contador==1)
