@@ -12,6 +12,7 @@ function mostrar()
 		if (numero%numeroAnterior==0)
 		{
 			flag=1;
+			break;
 		}
 	}
 
