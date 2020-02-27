@@ -9,5 +9,17 @@ e.	Se pedirán un número positivo y se mostrará la cantidad de números Primos
 */
 function ComenzarIngreso () 
 {
- 	
+ 	var numero;
+
+ 	while(respuesta!=no)
+ 	{
+ 		numero=prompt("ingresar un numero positivo: ");
+
+ 		while (isNaN(numero)||numero<1)
+ 		{
+ 			numero=prompt("error ingresar un numero positivo: ");
+ 		}
+ 		numero
+
+ 	}
 }
