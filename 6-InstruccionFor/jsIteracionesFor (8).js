@@ -5,8 +5,12 @@ function mostrar()
 	var flag;
 	flag=0;
 
-	numero=prompt("ingrese un numero : ");
-
+	do
+	{
+		numero=prompt("ingrese un numero : ");
+	}
+	while(isNaN(numero));
+	
 	for(numeroAnterior=2;numeroAnterior<numero;numeroAnterior++)
 	{
 		if (numero%numeroAnterior==0)
