@@ -66,8 +66,6 @@ function mostrar()
 			suma=suma+numero;
 		}
 		
-
-
 		respuesta=prompt("desea seguir ingresando datos? (no para salir) ");
 	}
 	promedio=positivos/cantidadPostivos;
