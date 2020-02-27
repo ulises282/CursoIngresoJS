@@ -14,6 +14,10 @@ function mostrar()
 			flag=1;
 			break;
 		}
+		if (numeroAnterior>(numero/2+1))
+		{
+			break;
+		}
 	}
 
 	if (flag==1)
