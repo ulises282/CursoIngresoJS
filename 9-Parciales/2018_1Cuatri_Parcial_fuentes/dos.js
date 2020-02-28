@@ -19,7 +19,16 @@ function mostrar()
 	var contador;
 	contador=0;
 	var nombreMasPersonas;
-	var cantidadPersonas;
+	var masPersonas;
+	var masDias;
+	var efectivo;
+	efectivo=0;
+	var tarjeta;
+	tarjeta=0;
+	var QR;
+	QR=0;
+	var masDiasPersonas;
+	masDiasPersonas=0;
 
 	while (respuesta != "no")
 	{
@@ -34,12 +43,14 @@ function mostrar()
 		do
 		{
 			cantidadPersonas=prompt("ingresar la cantidad de personas : ");
+			cantidadPersonas=parseInt(cantidadPersonas);
 		}
 		while (isNaN(cantidadPersonas)|| cantidadPersonas<1);
 
 		do
 		{
 			estadia=prompt("ingresar la cantidad de dias de estadia : ");
+			estadia=parseInt(estadia);
 		}
 		while (isNaN(estadia)|| estadia<1 );
 
@@ -52,18 +63,57 @@ function mostrar()
 		if (contador==1)
 		{
 			nombreMasPersonas=nombre;
-			cantidadPersonas=personas;
+			masPersonas=cantidadPersonas;
+			masDias=estadia;
+			masDiasPersonas=cantidadPersonas;
 		}
 
-		if (cantidadPersonas<personas)
+		if (cantidadPersonas<cantidadPersonas)
 		{
 			nombreMasPersonas=nombre;
-			cantidadPersonas=personas;
+			masPersonas=cantidadPersonas;
 		}
 
+		if (estadia>masDias)
+		{
+			masDias=estadia;
+			masDiasPersonas=cantidadPersonas;
+		}
+
+		switch(formaPago)
+		{
+			case"tarjeta":
+				tarjeta++;
+				break;
+
+			case"QR":
+				QR++;
+				break;
+
+			case"efectivo":
+				efectivo++;
+				break;
+		}
 
 		respuesta=prompt("desea seguir cargando datos? (no para salir)");
 	}
 
-	alert("el huésped que trajo más personas es: " + nombreMasPersonas + " que trajo : " + cantidadPersonas + " personas ");
+	if (tarjeta>QR && tarjeta>efectivo)
+	{
+		alert("el metodo de pago mas ultilizado fue tarjeta ");
+	}
+	else
+	{
+		if (QR>efectivo)
+		{
+			alert("el metodo de pago mas ultilizado fue QR ");
+		}
+		else
+		{
+			alert("el metodo de pago mas ultilizado fue efectivo ");
+		}
+	}
+	document.write("el huésped que trajo más personas es: " + nombreMasPersonas + " que trajo : " + cantidadPersonas + " personas ");
+	document.write("las personas que se quedaron mas dias son : " + masDiasPersonas + " que se quedaron : " + masDias + " dias ");
 }
+
